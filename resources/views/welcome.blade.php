@@ -14,9 +14,6 @@
                     <img class="h-8" src="{{url('/images/logo/favicon.png')}}">
                 </a>
             </div>
-            {{-- <div class="items-center justify-between hidden gap-12 text-black md:flex">
-                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Docs</a>
-            </div> --}}
             <div class="items-center hidden gap-8 md:flex">
                 <a href="/informasi">
                     <button class="flex items-center text-sm font-normal text-gray-800 hover:text-gray-900 transition duration-300">Tentang Smelter</button>
@@ -37,25 +34,7 @@
                 <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</button>
             </div>
         </div>
-        <div class="grid w-full h-screen grid-cols-1 my-auto xl:gap-14 md:gap-5">
-            <div class="flex flex-col w-[700px] justify-center col-span-1 text-center lg:text-center mx-auto">
-                
-                <img src="{{url('/images/logo/logo-horizontal-ds-light.png')}}" alt="">
-
-                <p class="mb-6 text-base font-normal leading-7 lg:w-2/3 text-grey-900 mx-auto my-4">
-                    Solusi semua kebutuhan Design team Digital Bussiness.
-                </p>
-
-                {{-- <p class="mb-6 text-base font-normal leading-7 lg:w-2/3 text-grey-900">
-                    Tujuan utamanya adalah untuk memberikan pengguna kemampuan untuk membuat, mengelola, dan melacak berbagai jenis request desain, mulai dari desain banner/ads, microsite, creative, hingga ads developer, dengan mudah melalui antarmuka web yang ramah pengguna.
-                </p> --}}
-                <div class="flex flex-col items-center">
-                    <a href="/guest/login">
-                        <button class="flex items-center py-4 text-sm font-bold text-white px-7 bg-purple-blue-500 hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">Buat Request</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+        @yield('container')
     </div>
     
     
