@@ -8,8 +8,8 @@
   {{-- @vite('resources/css/theme.css') --}}
   {{-- @vite('resources/css/loopple/loopple.css') --}}
   {{-- <link rel="stylesheet" href="{{asset('resources/css/app.css')}}"> --}}
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <link rel="stylesheet" href="{{asset('css/theme.css')}}">
+  @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/js/app.js'])
+  {{-- <link rel="stylesheet" href="{{asset('css/theme.css')}}"> --}}
   <link rel="stylesheet" href="{{asset('css/loopple/loopple.css')}}">
 </head>
 <body>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 xl:gap-14 md:gap-5">
-            <div class="flex flex-col w-[600px] justify-center col-span-1 text-center lg:text-center mx-auto">
+            <div class="flex flex-col w-[700px] justify-center col-span-1 text-center lg:text-center mx-auto">
                 
                 <img src="{{url('/images/logo/logo-horizontal-ds-light.png')}}" alt="">
 
