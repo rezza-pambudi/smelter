@@ -18,5 +18,10 @@
     "file": "assets/app-CifqVuM1.js",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/loopple.js": {
+    "file": "assets/loopple-B_V3FQRI.js",
+    "src": "resources/js/loopple.js",
+    "isEntry": true
   }
 }

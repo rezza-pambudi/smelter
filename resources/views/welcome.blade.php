@@ -77,5 +77,5 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
 </body>
-<script type="text/javascript" src="{{ asset('/js/loopple.js') }}"></script>
+@vite('resources/js/loopple.js')
 </html>

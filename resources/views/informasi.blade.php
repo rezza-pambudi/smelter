@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  @vite('resources/css/app.css')
-  @vite('resources/css/theme.css')
-  @vite('resources/css/loopple/loopple.css')
+  <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
+  @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
 </head>
 <body>
     <div class="container flex flex-col mx-auto">

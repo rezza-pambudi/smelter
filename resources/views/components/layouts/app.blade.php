@@ -15,16 +15,13 @@
             }
         </style>
  
-        @filamentStyles
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+ @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
  
     <body class="antialiased">
         {{ $slot }}
         @livewire('database-notifications')
         @livewire('notifications')
- 
-        @filamentScripts
-        <script type="text/javascript" src="{{ asset('/js/loopple.js') }}"></script>
+
     </body>
 </html>
