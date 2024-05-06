@@ -7,7 +7,7 @@
   @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container flex flex-col mx-auto">
+    <div class="container flex flex-col mx-auto h-screen">
         <div class="relative flex flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0">
             <div>
                 <a href="/">
@@ -37,7 +37,7 @@
                 <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</button>
             </div>
         </div>
-        <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 xl:gap-14 md:gap-5">
+        <div class="grid w-full h-screen grid-cols-1 my-auto xl:gap-14 md:gap-5">
             <div class="flex flex-col w-[700px] justify-center col-span-1 text-center lg:text-center mx-auto">
                 
                 <img src="{{url('/images/logo/logo-horizontal-ds-light.png')}}" alt="">
