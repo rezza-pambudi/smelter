@@ -26,7 +26,11 @@ export default {
         './vendor/filament/**/*.blade.php',
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                'bg-wp': "url('resources/images/bg-wp.jpg')",
+            }
+        },
     },
     plugins: [],
 }

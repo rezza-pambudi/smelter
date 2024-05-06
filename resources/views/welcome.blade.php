@@ -7,7 +7,7 @@
   @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container flex flex-col mx-auto h-screen">
+    <div class="container flex flex-col mx-auto h-screen bg-[url('bg-wp')]">
         <div class="relative flex flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0">
             <div>
                 <a href="/">
