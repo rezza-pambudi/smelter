@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
   {{-- @vite('resources/css/app.css') --}}
-  <link rel="stylesheet" href="{{url('/css/app-WwgkghjK.css')}}">
+  <link rel="stylesheet" href="{{url('/css/app/assets/app-WwgkghjK.css')}}">
   <link rel="stylesheet" href="{{url('/css/theme.css')}}">
   <link rel="stylesheet" href="{{url('/css/style.css')}}">
   <link rel="stylesheet" href="{{url('/css/loopple/loopple.css')}}">
@@ -65,6 +65,6 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/countto.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
-    <script src="/build/assets/app-MqdGl1xd.js"></script>
+    <script src="/css/app/assets/app-MqdGl1xd.js"></script>
 </body>
 </html>

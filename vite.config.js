@@ -11,4 +11,15 @@ export default defineConfig({
             ],
         }),
     ],
+    build: {
+        outDir: './public/css/app'
+    },
+    // build: {
+    //     rollupOptions: {
+    //       input: {
+    //         main: resolve(__dirname, 'resources/css/app.css'),
+    //         nested: resolve(__dirname, 'public/css/app.css'),
+    //       },
+    //     },
+    //   },
 })
