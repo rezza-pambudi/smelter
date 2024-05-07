@@ -7,7 +7,7 @@
   @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container-fluid flex flex-col mx-auto h-screen bg-cover">
+    <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp-alt-1.jpg')] bg-cover">
         <div class="container relative flex flex-wrap items-center justify-between w-full group py-7 shrink-0">
             <div>
                 <a href="/">

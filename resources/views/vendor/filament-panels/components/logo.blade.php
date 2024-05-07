@@ -1,1 +1,1 @@
-<a href="/"><img src="{{url('/images/logo/logo-ds.png')}}" alt="logo ds" class="h-8"></a>
+<a href="/"><img src="{{url('/images/logo/logo-horizontal-light.png')}}" alt="logo ds" class="h-6"></a>
