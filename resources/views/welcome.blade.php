@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  <link rel="stylesheet" href="{{url('/css/app/assets/app-WwgkghjK.css')}}">
-  <link rel="stylesheet" href="{{url('/css/theme.css')}}">
-  <link rel="stylesheet" href="{{url('/css/style.css')}}">
-  <link rel="stylesheet" href="{{url('/css/loopple/loopple.css')}}">
+  <link rel="stylesheet" href="{{url('/css/build/assets/app-WwgkghjK.css')}}">
+  <link rel="stylesheet" href="{{url('/css/build/assets/theme-DtZyoH6u.css')}}">
+  <link rel="stylesheet" href="{{url('/css/build/assets/style-CbMhjkwq.css')}}">
+  <link rel="stylesheet" href="{{url('/css/build/assets/loopple-B_KN2k8g.css')}}">
 </head>
 <body>
     <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp-alt-1.jpg')] bg-cover">
@@ -64,6 +64,6 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/countto.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
-    <script src="/css/app/assets/app-MqdGl1xd.js"></script>
+    <script src="/css/build/assets/app-MqdGl1xd.js"></script>
 </body>
 </html>
