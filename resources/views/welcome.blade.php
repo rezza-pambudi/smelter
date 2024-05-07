@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
+  {{-- @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js']) --}}
+  @vite('resources/css/app.css')
+  @vite('resources/css/theme.css')
+  @vite('resources/css/style.css')
+  @vite('resources/css/loopple/loopple.css')
+  @vite('resources/js/app.js')
+  @vite('resources/js/loopple.js')
 </head>
 <body>
     <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp-alt-1.jpg')] bg-cover">
@@ -62,5 +68,4 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
 </body>
-@vite('resources/js/loopple.js')
 </html>
