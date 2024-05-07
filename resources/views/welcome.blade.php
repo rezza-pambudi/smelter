@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
   @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
-  {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-WwgkghjK.css') }}">
-  <link rel="stylesheet" href="{{ asset('build/assets/theme-DtZyoH6u.css') }}">
-  <link rel="stylesheet" href="{{ asset('build/assets/style-CbMhjkwq.css') }}">
-  <link rel="stylesheet" href="{{ asset('build/assets/loopple-B_KN2k8g.css') }}"> --}}
 </head>
 <body>
     <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp-alt-1.jpg')] bg-cover">
@@ -67,6 +63,4 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
 </body>
 @vite('resources/js/loopple.js')
-{{-- <script src="{{ asset('build/assets/app-CifqVuM1.js') }}"></script>
-<script src="{{ asset('build/assets/loopple-B_V3FQRI.js') }}"></script> --}}
 </html>
