@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  {{-- @vite('resources/css/app.css') --}}
   <link rel="stylesheet" href="{{url('/css/app/assets/app-WwgkghjK.css')}}">
   <link rel="stylesheet" href="{{url('/css/theme.css')}}">
   <link rel="stylesheet" href="{{url('/css/style.css')}}">
