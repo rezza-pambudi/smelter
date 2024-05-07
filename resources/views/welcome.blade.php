@@ -66,7 +66,7 @@
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
 </body>
-@vite('resources/js/loopple.js')
+{{-- @vite('resources/js/loopple.js') --}}
 <script src="build/assets/app-CifqVuM1.js"></script>
 <script src="build/assets/loopple-B_V3FQRI.js"></script>
 </html>
