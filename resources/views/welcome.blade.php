@@ -30,8 +30,14 @@
                 </svg>
             </button>
             <div class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-4 px-4 rounded-2xl group-[.open]:max-h-64 top-full">
-                <button class="flex items-center text-sm font-normal text-black">Log In</button>
-                <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</button>
+                <a href="/informasi">
+                    <button class="flex items-center text-sm font-semibold text-gray-600 hover:text-gray-900 transition duration-300">Tentang Smelter</button>
+                </a>
+                <a href="/admin/login">
+                    <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">
+                        Login
+                    </button>
+                </a>
             </div>
         </div>
         @yield('container')
