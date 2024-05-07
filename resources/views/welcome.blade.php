@@ -11,6 +11,7 @@
   @vite('resources/css/loopple/loopple.css')
   @vite('resources/js/app.js')
   @vite('resources/js/loopple.js') --}}
+  @vite('resources/css/app.css')
   <link rel="stylesheet" href="{{url('/css/theme.css')}}">
   <link rel="stylesheet" href="{{url('/css/style.css')}}">
   <link rel="stylesheet" href="{{url('/css/loopple/loopple.css')}}">
