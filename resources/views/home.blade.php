@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="grid w-full h-screen grid-cols-1 my-auto xl:gap-14 md:gap-5">
-    <div class="flex flex-col w-[700px] justify-center col-span-1 text-center lg:text-center mx-auto">
+    <div class="flex flex-col md:w-[700px] justify-center col-span-1 text-center lg:text-center mx-auto">
         
         <img src="{{url('/images/logo/logo-horizontal-ds-light.png')}}" alt="">
 
