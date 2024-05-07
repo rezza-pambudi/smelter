@@ -4,29 +4,9 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/css/loopple/loopple.css": {
-    "file": "assets/loopple-B_KN2k8g.css",
-    "src": "resources/css/loopple/loopple.css",
-    "isEntry": true
-  },
-  "resources/css/style.css": {
-    "file": "assets/style-CbMhjkwq.css",
-    "src": "resources/css/style.css",
-    "isEntry": true
-  },
-  "resources/css/theme.css": {
-    "file": "assets/theme-DtZyoH6u.css",
-    "src": "resources/css/theme.css",
-    "isEntry": true
-  },
   "resources/js/app.js": {
     "file": "assets/app-CifqVuM1.js",
     "src": "resources/js/app.js",
-    "isEntry": true
-  },
-  "resources/js/loopple.js": {
-    "file": "assets/loopple-B_V3FQRI.js",
-    "src": "resources/js/loopple.js",
     "isEntry": true
   }
 }

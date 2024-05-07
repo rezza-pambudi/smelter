@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  {{-- @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js']) --}}
-  @vite('resources/css/app.css')
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  {{-- @vite('resources/css/app.css')
   @vite('resources/css/theme.css')
   @vite('resources/css/style.css')
   @vite('resources/css/loopple/loopple.css')
   @vite('resources/js/app.js')
-  @vite('resources/js/loopple.js')
+  @vite('resources/js/loopple.js') --}}
+  <link rel="stylesheet" href="{{url('/css/theme.css')}}">
+  <link rel="stylesheet" href="{{url('/css/style.css')}}">
+  <link rel="stylesheet" href="{{url('/css/loopple/loopple.css')}}">
 </head>
 <body>
     <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp-alt-1.jpg')] bg-cover">
