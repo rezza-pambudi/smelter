@@ -1,12 +1,17 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DkC0zYKm.css",
+    "file": "assets/app-CkB--2rF.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/loopple/loopple.css": {
     "file": "assets/loopple-B_KN2k8g.css",
     "src": "resources/css/loopple/loopple.css",
+    "isEntry": true
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-CbMhjkwq.css",
+    "src": "resources/css/style.css",
     "isEntry": true
   },
   "resources/css/theme.css": {

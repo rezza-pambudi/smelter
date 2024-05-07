@@ -9,5 +9,4 @@
                 </center>
             </div>
         </div>
- 
-        @endsection
+@endsection

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
+  @vite(['resources/css/app.css', 'resources/css/theme.css', 'resources/css/style.css', 'resources/css/loopple/loopple.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container flex flex-col mx-auto h-screen bg-[url('bg-wp')]">
-        <div class="relative flex flex-wrap items-center justify-between w-full bg-white group py-7 shrink-0">
+    <div class="container-fluid flex flex-col mx-auto h-screen bg-[url('https://cdnstatic.detik.com/requ/bg-wp.jpg')]">
+        <div class="container relative flex flex-wrap items-center justify-between w-full group py-7 shrink-0">
             <div>
                 <a href="/">
                     <img class="h-8" src="{{url('/images/logo/favicon.png')}}">

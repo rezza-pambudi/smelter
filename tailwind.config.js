@@ -28,7 +28,8 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                'bg-wp': "url('resources/images/bg-wp.jpg')",
+                // 'bg-wp': "url('@/resources/images/bg-wp.jpg')",
+                // 'bg-wp': "url('https://cdnstatic.detik.com/requ/bg-wp.jpg')",
             }
         },
     },
