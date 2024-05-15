@@ -27,6 +27,7 @@ use Filament\Notifications\Notification;
 use Filament\Tables\Columns\Layout\Panel;
 use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
+use Filament\Tables\Columns\SelectColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Forms\Components\MarkdownEditor;
@@ -143,6 +144,36 @@ class ResultResource extends Resource
             ->columns([
                 TextColumn::make('id')->sortable()->searchable(),
                 TextColumn::make('brand')->sortable()->searchable()->label('Brand')->color('primary'),
+                SelectColumn::make('designer')
+                    ->options([
+                        'Mohon menunggu' => 'Mohon menunggu',
+                        'Riyansyah' => 'Riyansyah',
+                        'Naufal' => 'Naufal',
+                        'Erlangga' => 'Erlangga',
+                        'Ferry' => 'Ferry',
+                        'Dimas' => 'Dimas',
+                        'Rezza' => 'Rezza',
+                        'Erick' => 'Erick',
+                        'Gusthia' => 'Gusthia',
+                        'Fuad' => 'Fuad',
+                        'Yongki' => 'Yongki',
+                        'Faiz' => 'Faiz',
+                        'Indah' => 'Indah',
+                        'Ayub' => 'Ayub',
+                        'Rizqi' => 'Rizqi',
+                        'Irfan' => 'Irfan',
+                        'Qonita' => 'Qonita'
+                    ]),
+                SelectColumn::make('status')
+                    ->options([
+                        'Mohon menunggu' => 'Mohon menunggu',
+                        'On progress' => 'On progress',
+                        'Done' => 'Done',
+                        'Revision' => 'Revision',
+                        'Hold' => 'Hold',
+                        'Cancel' => 'Cancel',
+                        'Test' => 'Test',
+                    ]),
                 TextColumn::make('pilih_form')->sortable()->searchable()->label('Form')->color('primary'),
                 TextColumn::make('tipe')->sortable()->searchable()->label('Tipe Request')
                     ->color(fn (string $state): string => match ($state) {
@@ -150,36 +181,38 @@ class ResultResource extends Resource
                         'Request Revisi' => 'warning',
                     }),
                 TextColumn::make('email')->sortable()->searchable()->color('primary'),
-                TextColumn::make('designer')->sortable()->searchable()->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'Mohon menunggu' => 'danger',
-                        'Riyansyah' => 'info',
-                        'Naufal' => 'info',
-                        'Erlangga' => 'info',
-                        'Ferry' => 'info',
-                        'Dimas' => 'info',
-                        'Rezza' => 'info',
-                        'Erick' => 'info',
-                        'Gusthia' => 'info',
-                        'Fuad' => 'info',
-                        'Yongki' => 'info',
-                        'Faiz' => 'info',
-                        'Indah' => 'info',
-                        'Ayub' => 'info',
-                        'Rizqi' => 'info',
-                        'Irfan' => 'info',
-                        'Qonita' => 'info'
-                    }),
-                TextColumn::make('status')->sortable()->searchable()->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'Mohon menunggu' => 'danger',
-                        'On progress' => 'warning',
-                        'Done' => 'success',
-                        'Revision' => 'success',
-                        'Hold' => 'danger',
-                        'Cancel' => 'danger',
-                        'Test' => 'info',
-                    }),
+                // TextColumn::make('designer')->sortable()->searchable()->badge()
+                //     ->color(fn (string $state): string => match ($state) {
+                //         'Mohon menunggu' => 'danger',
+                //         'Riyansyah' => 'info',
+                //         'Naufal' => 'info',
+                //         'Erlangga' => 'info',
+                //         'Ferry' => 'info',
+                //         'Dimas' => 'info',
+                //         'Rezza' => 'info',
+                //         'Erick' => 'info',
+                //         'Gusthia' => 'info',
+                //         'Fuad' => 'info',
+                //         'Yongki' => 'info',
+                //         'Faiz' => 'info',
+                //         'Indah' => 'info',
+                //         'Ayub' => 'info',
+                //         'Rizqi' => 'info',
+                //         'Irfan' => 'info',
+                //         'Qonita' => 'info'
+                //     }),
+
+                // TextColumn::make('status')->sortable()->searchable()->badge()
+                //     ->color(fn (string $state): string => match ($state) {
+                //         'Mohon menunggu' => 'danger',
+                //         'On progress' => 'warning',
+                //         'Done' => 'success',
+                //         'Revision' => 'success',
+                //         'Hold' => 'danger',
+                //         'Cancel' => 'danger',
+                //         'Test' => 'info',
+                //     }),
+
                 TextColumn::make('created_at')->sortable()->searchable()->label('Dibuat Pada')
             ])->defaultSort('created_at', 'desc')
             ->filters([
