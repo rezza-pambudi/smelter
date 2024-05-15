@@ -280,7 +280,10 @@ class RequestDesignResource extends Resource
         return 'desc';
     }
 
-
+    // public static function canDelete(Model $record): bool
+    // {
+    //     return false;
+    // }
 
     // protected function getActions(): array
     // {

@@ -142,7 +142,7 @@ class ResultResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable()->searchable(),
+                // TextColumn::make('id')->sortable()->searchable(),
                 TextColumn::make('brand')->sortable()->searchable()->label('Brand')->color('primary'),
                 SelectColumn::make('designer')
                     ->options([
@@ -180,7 +180,7 @@ class ResultResource extends Resource
                         'Request Baru' => 'info',
                         'Request Revisi' => 'warning',
                     }),
-                TextColumn::make('email')->sortable()->searchable()->color('primary'),
+                
                 // TextColumn::make('designer')->sortable()->searchable()->badge()
                 //     ->color(fn (string $state): string => match ($state) {
                 //         'Mohon menunggu' => 'danger',
@@ -213,7 +213,7 @@ class ResultResource extends Resource
                 //         'Test' => 'info',
                 //     }),
 
-                TextColumn::make('created_at')->sortable()->searchable()->label('Dibuat Pada')
+                
             ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
@@ -301,7 +301,8 @@ class ResultResource extends Resource
                             ])->label('Hasil'),
                         Tabs\Tab::make('Notes')
                             ->schema([
-                                // ...
+                                TextEntry::make('email')->markdown()->label('Email Pengirim')->color('primary'),
+                                TextEntry::make('created_at')->markdown()->label('Dibuat Pada'),
                             ])->label('Catatan dari designer'),
                     ])
             ])->columns(columns: 1);
