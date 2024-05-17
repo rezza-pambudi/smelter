@@ -21,6 +21,8 @@ class ManageUserResource extends Resource
 {
     protected static ?string $model = ManageUser::class;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $navigationGroup = 'Operation Management';

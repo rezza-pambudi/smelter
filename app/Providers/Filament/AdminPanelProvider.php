@@ -100,7 +100,7 @@ class AdminPanelProvider extends PanelProvider
                             ...ResultResource::getNavigationItems(),
                             ...BrandResource::getNavigationItems(),
                             ...UserResource::getNavigationItems(),
-                            ...ManageUserResource::getNavigationItems(),
+                            // ...ManageUserResource::getNavigationItems(),
                             NavigationItem::make('Roles')
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([

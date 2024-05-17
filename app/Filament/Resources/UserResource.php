@@ -51,6 +51,7 @@ class UserResource extends Resource
                     ->password()
                     ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
                     ->dehydrated(fn(?string $state): bool => filled($state)),
+                    TextInput::make(name: 'contact'),
                     // ->require(fn(Page $livewire): bool => $livewire instanceof CreateRecord),
                     // Select::make('roles')->searchable()->options([
                     //     'Super-admin' => 'super-admin',
@@ -69,6 +70,7 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
+                TextColumn::make('contact')->sortable()->searchable(),
                 TextColumn::make('roles.name')->sortable()->searchable(),
             ])
             ->filters([
