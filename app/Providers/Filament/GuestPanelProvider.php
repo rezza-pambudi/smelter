@@ -18,6 +18,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
+use App\Filament\Auth\Register;
 
 class GuestPanelProvider extends PanelProvider
 {
@@ -27,7 +28,7 @@ class GuestPanelProvider extends PanelProvider
             ->login()
             ->id('guest')
             ->path('guest')
-            ->registration()
+            ->registration(Register::class)
             ->passwordReset()
             ->emailVerification()
             // ->plugin(
