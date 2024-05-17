@@ -42,11 +42,11 @@ class RequestDesignResource extends Resource
 {
     protected static ?string $model = RequestDesign::class;
 
-    protected static ?string $modelLabel = 'All Request';
+    protected static ?string $modelLabel = 'Request';
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
-    protected static ?string $navigationGroup = 'Form';
+    protected static ?string $navigationGroup = 'Design Management';
 
     protected static ?string $navigationLabel = 'All Request';
 
@@ -80,70 +80,66 @@ class RequestDesignResource extends Resource
                     ->description('Silahkan isikan request design anda')
                     ->icon('heroicon-m-information-circle')
                     ->schema([
-                        Fieldset::make('')
-                            ->relationship('result', 'id_request')
+
+                        TextInput::make('id')->unique(ignorable: fn ($record) => $record)->hidden()->afterStateUpdated(function (?string $state, ?string $old) {
+                            $state()->update();
+                        }),
+                        TextInput::make('email')->required()->email()->rule(
+                            fn ($record) => 'unique:request_designs,email,'
+                                . ($record ? $record->id : 'NULL')
+                                . ',id'
+                        )->maxLength(255),
+                        Select::make('pilih_form')->searchable()->options([
+                            'Banner/ads' => 'Form Request Banner/ads',
+                            'Microsite' => 'Form Request Microsite',
+                            'Creative' => 'Form Request Creative',
+                            'Ads Developer' => 'Form Request Ads Developer',
+                        ])->preload(),
+                        Select::make('brand')->required()
+                            ->relationship('brand', 'brand')
+                            ->options(Brand::all()->pluck('brand', 'brand'))
                             ->live()
-                            ->schema([
-                                TextInput::make('id')->unique(ignorable: fn ($record) => $record)->hidden()->afterStateUpdated(function (?string $state, ?string $old) {
-                                    $state()->update();
-                                }),
-                                TextInput::make('email')->required()->email()->rule(
-                                    fn ($record) => 'unique:request_designs,email,'
-                                        . ($record ? $record->id : 'NULL')
-                                        . ',id'
-                                )->maxLength(255),
-                                Select::make('pilih_form')->searchable()->options([
-                                    'Banner/ads' => 'Form Request Banner/ads',
-                                    'Microsite' => 'Form Request Microsite',
-                                    'Creative' => 'Form Request Creative',
-                                    'Ads Developer' => 'Form Request Ads Developer',
-                                ])->preload(),
-                                Select::make('brand')->required()
-                                    ->relationship('brand', 'brand')
-                                    ->options(Brand::all()->pluck('brand', 'brand'))
-                                    ->live()
-                                    ->label('Pilih Brand')
-                                    ->searchable()
-                                    ->preload()
-                                    ->placeholder('Cari Brand')
-                                    // ->unique(ignorable: fn ($record) => $record)
-                                    ->createOptionForm([
-                                        Forms\Components\TextInput::make(name: 'brand')
-                                            ->required()
-                                            ->label('Tambah Brand')
-                                            ->maxLength(255)
-                                            ->unique(ignorable: fn ($record) => $record),
-                                    ])
-                                    ->afterStateUpdated(fn ($state, Set $set) => $set('brand', Brand::find($state)?->brand ?? $state)),
-                                // ->afterStateUpdated(fn (Select $component) => $component
-                                //     ->getContainer()
-                                //     ->getComponent('brand')),
-                                // ->options(function(callable $get){
-                                //     $requestdesign = RequestDesign::find($get('id'));
-                                //     if(!$requestdesign){
-                                //         return [];
-                                //     }
-                                //     return $requestdesign->result()->pluck('brand', 'id');
-                                // })
-                                // ->options(function(callable $get){
-                                //     $requestdesign = RequestDesign::find($get('id'));
-                                //     if(!$requestdesign){
-                                //         return [];
-                                //     }
-                                //     return $requestdesign->result()->pluck('brand', 'id');
-                                // })->label('Pilih Brand')
-
-                                Select::make('tipe')
-                                    ->options([
-                                        'Request Baru' => 'Request Baru',
-                                        'Request Revisi' => 'Request Revisi',
-                                    ])->label('Tipe Request')
-                                    ->placeholder('Pilih Tipe'),
-                                MarkdownEditor::make('brief')->required()->columnSpanFull()->label('Brief dan catatan'),
-                                MarkdownEditor::make('materi')->required()->columnSpanFull(),
+                            ->label('Pilih Brand')
+                            ->searchable()
+                            ->preload()
+                            ->placeholder('Cari Brand')
+                            // ->unique(ignorable: fn ($record) => $record)
+                            ->createOptionForm([
+                                Forms\Components\TextInput::make(name: 'brand')
+                                    ->required()
+                                    ->label('Tambah Brand')
+                                    ->maxLength(255)
+                                    ->unique(ignorable: fn ($record) => $record),
                             ])
-                    ])
+                            ->afterStateUpdated(fn ($state, Set $set) => $set('brand', Brand::find($state)?->brand ?? $state)),
+                        // ->afterStateUpdated(fn (Select $component) => $component
+                        //     ->getContainer()
+                        //     ->getComponent('brand')),
+                        // ->options(function(callable $get){
+                        //     $requestdesign = RequestDesign::find($get('id'));
+                        //     if(!$requestdesign){
+                        //         return [];
+                        //     }
+                        //     return $requestdesign->result()->pluck('brand', 'id');
+                        // })
+                        // ->options(function(callable $get){
+                        //     $requestdesign = RequestDesign::find($get('id'));
+                        //     if(!$requestdesign){
+                        //         return [];
+                        //     }
+                        //     return $requestdesign->result()->pluck('brand', 'id');
+                        // })->label('Pilih Brand')
 
+                        Select::make('tipe')
+                            ->options([
+                                'Request Baru' => 'Request Baru',
+                                'Request Revisi' => 'Request Revisi',
+                            ])->label('Tipe Request')
+                            ->placeholder('Pilih Tipe'),
+                        MarkdownEditor::make('brief')->required()->columnSpanFull()->label('Brief dan catatan'),
+                        MarkdownEditor::make('materi')->required()->columnSpanFull(),
+
+                    ])->relationship('result', 'id_request')->columns(columns: 2)
 
             ])->columns(columns: 1);
     }

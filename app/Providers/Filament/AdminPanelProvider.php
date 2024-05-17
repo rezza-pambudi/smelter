@@ -32,13 +32,14 @@ use App\Filament\Resources\UserResource;
 use Filament\Pages\Dashboard;
 use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
+use App\Filament\Pages\Request;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         DatabaseNotifications::trigger('filament.notifications.database-notifications-trigger');
-        
+
         return $panel
             ->default()
             ->id('admin')
@@ -62,7 +63,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Request::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -94,13 +95,21 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-o-home')
                                 ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
                                 ->url(fn (): string => Dashboard::getUrl()),
+                            NavigationItem::make('Request')
+                                ->icon('heroicon-o-star')
+                                ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.request'))
+                                ->url(fn (): string => Request::getUrl()),
                         ]),
-                    NavigationGroup::make('Operation Management')
+                    NavigationGroup::make('Design Management')
                         ->items([
                             ...ResultResource::getNavigationItems(),
+                            ...RequestDesignResource::getNavigationItems(),
+                            // ...ManageUserResource::getNavigationItems(),
+                        ]),
+                    NavigationGroup::make('Setting')
+                        ->items([
                             ...BrandResource::getNavigationItems(),
                             ...UserResource::getNavigationItems(),
-                            // ...ManageUserResource::getNavigationItems(),
                             NavigationItem::make('Roles')
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([
@@ -120,15 +129,9 @@ class AdminPanelProvider extends PanelProvider
                                 ]))
                                 ->url(fn (): string => '/admin/permissions'),
                         ]),
-                    NavigationGroup::make('Form')
-                        ->items([
-                            ...RequestDesignResource::getNavigationItems(),
-                        ]),
                 ]);
             })
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');
-            
     }
-
 }

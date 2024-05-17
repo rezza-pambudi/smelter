@@ -47,7 +47,7 @@ class ResultResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-right-end-on-rectangle';
 
-    protected static ?string $navigationGroup = 'Operation Management';
+    protected static ?string $navigationGroup = 'Design Management';
 
     protected static ?string $navigationLabel = 'Kelola Desain';
 
