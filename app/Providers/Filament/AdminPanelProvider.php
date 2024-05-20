@@ -33,6 +33,7 @@ use Filament\Pages\Dashboard;
 use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
 use App\Filament\Pages\Request;
+use App\Models\Roles;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -111,6 +112,7 @@ class AdminPanelProvider extends PanelProvider
                             ...BrandResource::getNavigationItems(),
                             ...UserResource::getNavigationItems(),
                             NavigationItem::make('Roles')
+                            // ->visible(fn (): bool => auth()->user('admin')->can('viewAny', Roles::class))
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([
                                     'filament.admin.resources.roles.index',
