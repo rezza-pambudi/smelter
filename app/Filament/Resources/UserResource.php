@@ -33,6 +33,8 @@ class UserResource extends Resource
  
     protected static ?string $navigationLabel = 'Data User';
 
+    protected static ?string $navigationGroup = 'Settings';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -51,7 +53,7 @@ class UserResource extends Resource
                     ->password()
                     ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
                     ->dehydrated(fn(?string $state): bool => filled($state)),
-                    TextInput::make(name: 'contact'),
+                    TextInput::make(name: 'contact')->required(),
                     // ->require(fn(Page $livewire): bool => $livewire instanceof CreateRecord),
                     // Select::make('roles')->searchable()->options([
                     //     'Super-admin' => 'super-admin',
