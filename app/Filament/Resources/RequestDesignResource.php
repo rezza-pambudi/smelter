@@ -88,13 +88,13 @@ class RequestDesignResource extends Resource
                             fn ($record) => 'unique:request_designs,email,'
                                 . ($record ? $record->id : 'NULL')
                                 . ',id'
-                        )->maxLength(255),
+                        )->maxLength(255) ->placeholder('Harap masukkan email detik anda'),
                         Select::make('pilih_form')->searchable()->options([
                             'Banner/ads' => 'Form Request Banner/ads',
                             'Microsite' => 'Form Request Microsite',
                             'Creative' => 'Form Request Creative',
                             'Ads Developer' => 'Form Request Ads Developer',
-                        ])->preload(),
+                        ])->preload()->placeholder('Tentukan form yang anda inginkan'),
                         Select::make('brand')->required()
                             ->relationship('brand', 'brand')
                             ->options(Brand::all()->pluck('brand', 'brand'))
@@ -136,8 +136,8 @@ class RequestDesignResource extends Resource
                                 'Request Revisi' => 'Request Revisi',
                             ])->label('Tipe Request')
                             ->placeholder('Pilih Tipe'),
-                        MarkdownEditor::make('brief')->required()->columnSpanFull()->label('Brief dan catatan'),
-                        MarkdownEditor::make('materi')->required()->columnSpanFull(),
+                        MarkdownEditor::make('brief')->required()->columnSpanFull()->label('Brief dan catatan')->placeholder('Masukkan brief sesuai dengan ketentuan'),
+                        MarkdownEditor::make('materi')->required()->columnSpanFull()->label('Link materi')->placeholder('Masukkan link materi'),
 
                     ])->relationship('result', 'id_request')->columns(columns: 2)
 
