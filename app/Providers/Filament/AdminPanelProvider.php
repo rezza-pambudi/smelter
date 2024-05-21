@@ -32,6 +32,7 @@ use App\Filament\Resources\UserResource;
 use Filament\Pages\Dashboard;
 use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
+use App\Filament\Auth\Register;
 use App\Filament\Pages\Request;
 use App\Models\Roles;
 
@@ -46,7 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->registration()
+            ->registration(Register::class)
             ->passwordReset()
             ->emailVerification()
             ->plugin(

@@ -37,7 +37,7 @@ class RequestDesignPolicy
      */
     public function update(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['super-admin', 'admin', 'Member']);
     }
 
     /**

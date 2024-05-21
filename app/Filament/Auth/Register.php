@@ -16,7 +16,7 @@ class Register extends AuthRegister
             $this->getPasswordFormComponent(),
             $this->getPasswordConfirmationFormComponent(),
 
-            TextInput::make('contact')
+            TextInput::make('contact')->required()
         ])
         ->statePath('data');
     }
