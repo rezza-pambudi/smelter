@@ -2,8 +2,9 @@
 
 namespace App\Filament\Auth;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\Auth\Register as AuthRegister;
 
 class Register extends AuthRegister
@@ -16,7 +17,9 @@ class Register extends AuthRegister
             $this->getPasswordFormComponent(),
             $this->getPasswordConfirmationFormComponent(),
 
-            TextInput::make('contact')->required()
+            TextInput::make('contact')->required(),
+            // Select::make('roles')->multiple()->default('Member')
+            // TextInput::make('roles.name')->required()->default('Member')->hidden()
         ])
         ->statePath('data');
     }

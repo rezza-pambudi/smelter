@@ -67,6 +67,13 @@ class User extends Authenticatable implements FilamentUser
     {
         return str_ends_with($this->email, '@detik.com');
     }
+
+    protected static function booted(): void
+    {
+        static::created(function (User $user) {
+            $user->assignRole('Member');
+        });
+    }
 }
 
 

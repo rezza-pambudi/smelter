@@ -74,7 +74,7 @@ class UserResource extends Resource
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('contact')->sortable()->searchable(),
                 TextColumn::make('roles.name')->sortable()->searchable(),
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
