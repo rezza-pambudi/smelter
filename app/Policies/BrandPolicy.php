@@ -14,7 +14,7 @@ class BrandPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -22,7 +22,7 @@ class BrandPolicy
      */
     public function view(User $user, Brand $brand): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -30,7 +30,7 @@ class BrandPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -38,7 +38,7 @@ class BrandPolicy
      */
     public function update(User $user, Brand $brand): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -46,7 +46,7 @@ class BrandPolicy
      */
     public function delete(User $user, Brand $brand): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -54,7 +54,7 @@ class BrandPolicy
      */
     public function restore(User $user, Brand $brand): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -62,6 +62,6 @@ class BrandPolicy
      */
     public function forceDelete(User $user, Brand $brand): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 }

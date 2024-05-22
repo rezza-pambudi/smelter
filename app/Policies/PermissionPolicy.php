@@ -14,7 +14,7 @@ class PermissionPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -22,7 +22,7 @@ class PermissionPolicy
      */
     public function view(User $user, ModelsPermission $permission): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -30,7 +30,7 @@ class PermissionPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -38,7 +38,7 @@ class PermissionPolicy
      */
     public function update(User $user, ModelsPermission $permission): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -46,7 +46,7 @@ class PermissionPolicy
      */
     public function delete(User $user, ModelsPermission $permission): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -54,7 +54,7 @@ class PermissionPolicy
      */
     public function restore(User $user, ModelsPermission $permission): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -62,6 +62,6 @@ class PermissionPolicy
      */
     public function forceDelete(User $user, ModelsPermission $permission): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 }

@@ -61,8 +61,8 @@ class CreateRequestDesign extends CreateRecord
     {
         return Notification::make()
             ->success()
-            ->title('User registered')
-            ->body('The user has been created successfully.');
+            ->title('Request telah dibuat')
+            ->body('Terima kasih');
     }
 
     use Notifiable;

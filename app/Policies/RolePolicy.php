@@ -14,7 +14,7 @@ class RolePolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -22,7 +22,7 @@ class RolePolicy
      */
     public function view(User $user, ModelsRole $role): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -30,7 +30,7 @@ class RolePolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -38,7 +38,7 @@ class RolePolicy
      */
     public function update(User $user, ModelsRole $role): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -46,7 +46,7 @@ class RolePolicy
      */
     public function delete(User $user, ModelsRole $role): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -54,7 +54,7 @@ class RolePolicy
      */
     public function restore(User $user, ModelsRole $role): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -62,6 +62,6 @@ class RolePolicy
      */
     public function forceDelete(User $user, ModelsRole $role): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 }

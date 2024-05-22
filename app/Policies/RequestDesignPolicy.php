@@ -13,7 +13,7 @@ class RequestDesignPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin', 'Member']);
+        return $user->hasAnyRole(['Super-admin', 'admin', 'Member']);
     }
 
     /**
@@ -21,7 +21,7 @@ class RequestDesignPolicy
      */
     public function view(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin', 'Member']);
+        return $user->hasAnyRole(['Super-admin', 'admin', 'Member']);
     }
 
     /**
@@ -29,7 +29,7 @@ class RequestDesignPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin', 'Member']);
+        return $user->hasAnyRole(['Super-admin', 'admin', 'Member']);
     }
 
     /**
@@ -37,7 +37,7 @@ class RequestDesignPolicy
      */
     public function update(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin', 'Member']);
+        return $user->hasAnyRole(['Super-admin', 'admin', 'Member']);
     }
 
     /**
@@ -45,7 +45,7 @@ class RequestDesignPolicy
      */
     public function delete(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -53,7 +53,7 @@ class RequestDesignPolicy
      */
     public function restore(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 
     /**
@@ -61,6 +61,6 @@ class RequestDesignPolicy
      */
     public function forceDelete(User $user, RequestDesign $requestDesign): bool
     {
-        return $user->hasAnyRole(['super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin', 'admin']);
     }
 }
