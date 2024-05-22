@@ -91,8 +91,8 @@ class AdminPanelProvider extends PanelProvider
             ], isPersistent: true)
             ->navigationGroups([
                 'Design Management',
-                'Roles and Permissions',
                 'Settings',
+                'Roles and Permissions',
             ])
             // ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
             //     return $builder->groups([

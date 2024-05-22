@@ -22,6 +22,7 @@ class ListRequestDesigns extends ListRecords
     {
         return null;
     }
+    
 
     /**
  * Get the mail representation of the notification.
