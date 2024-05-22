@@ -7,6 +7,7 @@ use App\Models\User;
 use Filament\Tables;
 use App\Models\Brand;
 use App\Models\Result;
+use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -37,6 +38,9 @@ use AnourValar\EloquentSerialize\Tests\Models\Post;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ResultResource\RelationManagers;
 use App\Filament\Resources\ResultResource\RelationManagers\RequestDesignRelationManager;
+use Illuminate\Support\Facades\Auth;
+use Closure;
+use Illuminate\Support\Str;
 
 class ResultResource extends Resource
 {
@@ -174,13 +178,28 @@ class ResultResource extends Resource
                         'Cancel' => 'Cancel',
                         'Test' => 'Test',
                     ]),
+                    // ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
+                    //     if (($get('slug') ?? '') !== Str::slug($old)) {
+                    //         return;
+                    //     }
+                    
+                    //     $set('slug', Str::slug($state));
+                    // }),
+                    // ->afterStateUpdated(function (Closure $name, ?string $state) {
+                    //     $name = Auth::user()->name;
+                    //     Notification::make()
+                    //         ->success()
+                    //         ->title('Informasi request dari ' . $name)
+                    //         ->body('Status request: ' . $state)
+                    //         ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+                    // }),
                 TextColumn::make('pilih_form')->sortable()->searchable()->label('Form')->color('primary'),
                 TextColumn::make('tipe')->sortable()->searchable()->label('Tipe Request')
                     ->color(fn (string $state): string => match ($state) {
                         'Request Baru' => 'info',
                         'Request Revisi' => 'warning',
                     }),
-                
+
                 // TextColumn::make('designer')->sortable()->searchable()->badge()
                 //     ->color(fn (string $state): string => match ($state) {
                 //         'Mohon menunggu' => 'danger',
@@ -213,7 +232,7 @@ class ResultResource extends Resource
                 //         'Test' => 'info',
                 //     }),
 
-                
+
             ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
