@@ -37,7 +37,7 @@ class UserPolicy
      */
     public function update(User $user, User $model): bool
     {
-        return $user->hasAnyRole(['Super-admin', 'admin']);
+        return $user->hasAnyRole(['Super-admin']);
     }
 
     /**
