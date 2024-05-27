@@ -37,6 +37,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\RequestDesignResource\Pages;
 use Filament\Resources\RelationManagers\RelationManager;
 use App\Filament\Resources\RequestDesignResource\RelationManagers;
+use App\Filament\Resources\RequestDesignResource\Widgets\StatsOverview;
 
 class RequestDesignResource extends Resource
 {
@@ -274,6 +275,13 @@ class RequestDesignResource extends Resource
     protected function getDefaultTableSortDirection(): ?string
     {
         return 'desc';
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            StatsOverview::class
+        ];
     }
 
     // public static function canDelete(Model $record): bool

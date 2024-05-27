@@ -34,6 +34,7 @@ use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
 use App\Filament\Auth\Register;
 use App\Filament\Pages\Request;
+use App\Filament\Resources\RequestDesignResource\Widgets\StatsOverview;
 use App\Models\Roles;
 
 class AdminPanelProvider extends PanelProvider
@@ -70,7 +71,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-
+                StatsOverview::class,
             ])
             ->middleware([
                 EncryptCookies::class,
