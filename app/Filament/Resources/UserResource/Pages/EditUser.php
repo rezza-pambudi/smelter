@@ -26,7 +26,7 @@ class EditUser extends EditRecord
         Notification::make()
             ->success()
             ->title('User telah diedit oleh '.$name)
-            ->body('Request Telah disimpan')
+            ->body('Perubahan berhasil')
             ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
 
         // Notification::make()
