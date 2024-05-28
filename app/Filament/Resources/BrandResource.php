@@ -63,6 +63,16 @@ class BrandResource extends Resource
         ];
     }
 
+    protected function getDefaultTableSortColumn(): ?string
+    {
+        return 'created_at';
+    }
+
+    protected function getDefaultTableSortDirection(): ?string
+    {
+        return 'desc';
+    }
+
     public static function getPages(): array
     {
         return [
