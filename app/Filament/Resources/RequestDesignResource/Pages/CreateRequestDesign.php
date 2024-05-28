@@ -6,6 +6,7 @@ use App\Models\User;
 use Filament\Pages\Actions;
 use Filament\Actions\Action;
 use App\Models\RequestDesign;
+use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Notifications\Notification;
@@ -40,21 +41,20 @@ class CreateRequestDesign extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-        $name = Auth::user()->name;
-        Notification::make()
-            ->success()
-            ->title('Request dibuat oleh '.$name)
-            ->body('Request Telah disimpan')
-            ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
-
-        // Notification::make()
-        //     ->success()
-        //     ->title('Murid ' . $this->name . ' telah mendaftar')
-        //     ->sendToDatabase(User::whereHas('roles', function ($query) {
-        //         $query->where('name', 'admin');
-        //     })->get());
-
         return $this->previousUrl ?? $this->getResource()::getUrl('index');
+    }
+
+    protected function afterCreate(): void{
+
+        $result = $this->record;
+
+        Notification::make()
+            ->title("{$result->result?->tipe}")
+            ->icon('heroicon-o-megaphone')
+            ->body("From: {$result->result?->email}<br>Brand: {$result->result?->brand}")
+            ->persistent()
+            ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
+            
     }
 
     protected function getCreatedNotification(): ?Notification
@@ -62,7 +62,7 @@ class CreateRequestDesign extends CreateRecord
         return Notification::make()
             ->success()
             ->title('Request telah dibuat')
-            ->body('Terima kasih');
+            ->body('Pantau request di menu all request');
     }
 
     use Notifiable;

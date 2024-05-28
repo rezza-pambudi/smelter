@@ -45,7 +45,7 @@ class RequestDesignResource extends Resource
 
     protected static ?string $modelLabel = 'Request';
 
-    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationGroup = 'Design Management';
 
@@ -235,10 +235,10 @@ class RequestDesignResource extends Resource
                             ->schema([
                                 TextEntry::make('result.hasil')->markdown()->label('')
                             ])->label('Hasil'),
-                        Tabs\Tab::make('Notes')
-                            ->schema([
-                                // ...
-                            ])->label('Catatan dari designer'),
+                        // Tabs\Tab::make('Notes')
+                        //     ->schema([
+                        //         // ...
+                        //     ])->label('Catatan dari designer'),
                     ])
             ])->columns(columns: 1);
     }

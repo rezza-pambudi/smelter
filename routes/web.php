@@ -26,6 +26,10 @@ Route::get('/informasi', function () {
     return view('informasi');
 });
 
+// Route::get('/admin/request-designs', function () {
+//     return view('filament.admin.request');
+// })->name('toRequestDesign');
+
 // Route::get(url:'test', function() {
 //     $recipient = auth()->user();
 

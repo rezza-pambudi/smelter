@@ -29,7 +29,7 @@ class EditResult extends EditRecord
         Notification::make()
             ->success()
             ->title('INFO: PROGRESS REQUEST oleh ' . $name)
-            ->body("Request dari: {$result->email}, Brand: {$result->brand}, Status: {$result->status} 
+            ->body("Request dari: {$result->email}<br>Brand: {$result->brand}<br>Status: {$result->status} 
             ")
             ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
 

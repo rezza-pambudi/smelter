@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class Request extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     protected static string $view = 'filament.pages.request';
 
