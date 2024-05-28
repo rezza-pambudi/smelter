@@ -42,7 +42,7 @@ class BrandResource extends Resource
             ->columns([
                 TextColumn::make('id')->sortable()->searchable()->label('Id'),
                 TextColumn::make('brand')->sortable()->searchable()->label('Brand')->color('primary')
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
@@ -61,16 +61,6 @@ class BrandResource extends Resource
         return [
             //
         ];
-    }
-
-    protected function getDefaultTableSortColumn(): ?string
-    {
-        return 'created_at';
-    }
-
-    protected function getDefaultTableSortDirection(): ?string
-    {
-        return 'desc';
     }
 
     public static function getPages(): array
