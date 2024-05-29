@@ -322,7 +322,7 @@ class ResultResource extends Resource
                             ->schema([
                                 TextEntry::make('email')->markdown()->label('Email Pengirim')->color('primary'),
                                 TextEntry::make('created_at')->markdown()->label('Dibuat Pada'),
-                            ])->label('Catatan dari designer'),
+                            ])->label('Informasi lainnya'),
                     ])
             ])->columns(columns: 1);
     }
