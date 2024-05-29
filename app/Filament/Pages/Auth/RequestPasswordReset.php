@@ -42,7 +42,7 @@ class RequestPasswordReset extends BaseRequestPasswordReset
                     throw new Exception("Model [{$userClass}] does not have a [notify()] method.");
                 }
  
-                $user = new ResetPasswordNotification($token);  
+                $notification = new ResetPasswordNotification($token);  
                 // $user->notify($notification);
             },
         );
