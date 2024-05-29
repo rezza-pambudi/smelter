@@ -33,6 +33,7 @@ use Filament\Pages\Dashboard;
 use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
 use App\Filament\Auth\Register;
+use App\Filament\Pages\Auth\RequestPasswordReset;
 use App\Filament\Pages\Info;
 use App\Filament\Pages\Information;
 use App\Filament\Pages\Request;
@@ -51,10 +52,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->registration(Register::class)
-            ->passwordReset()
+            // ->passwordReset()
+            ->passwordReset(RequestPasswordReset::class) 
             ->emailVerification()
             ->plugin(
-                FilamentSpatieRolesPermissionsPlugin::make()
+                FilamentSpatieRolesPermissionsPlugin::make(),
+                \RickDBCN\FilamentEmail\FilamentEmail::make()
             )
             ->profile()
             ->sidebarCollapsibleOnDesktop(true)
