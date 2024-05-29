@@ -33,6 +33,8 @@ use Filament\Pages\Dashboard;
 use Filament\Notifications\Livewire\DatabaseNotifications;
 use Althinect\FilamentSpatieRolesPermissions\Middleware\SyncSpatiePermissionsWithFilamentTenants;
 use App\Filament\Auth\Register;
+use App\Filament\Pages\Info;
+use App\Filament\Pages\Information;
 use App\Filament\Pages\Request;
 use App\Filament\Resources\RequestDesignResource\Widgets\StatsOverview;
 use App\Models\Roles;
@@ -67,6 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Request::class,
+                Information::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
