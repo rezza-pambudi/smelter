@@ -7,7 +7,7 @@
         <img src="{{url('/images/logo/logo-horizontal-ds-light.png')}}" alt="">
 
         <p class="mb-6 text-base font-normal leading-7 lg:w-2/3 text-black mx-auto my-4">
-            Solusi semua kebutuhan Design team Digital Bussiness.
+            Solusi semua kebutuhan design team Digital Bussiness.
         </p>
 
         <div class="flex flex-col items-center">
