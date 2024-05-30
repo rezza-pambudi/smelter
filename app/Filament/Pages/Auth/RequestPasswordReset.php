@@ -10,7 +10,8 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Notifications\ResetPasswordNotification; 
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use Filament\Pages\Auth\PasswordReset\RequestPasswordReset as BaseRequestPasswordReset;
- 
+use Illuminate\Notifications\Events\NotificationSending;
+
 class RequestPasswordReset extends BaseRequestPasswordReset
 {
     public function request(): void
@@ -42,8 +43,11 @@ class RequestPasswordReset extends BaseRequestPasswordReset
                     throw new Exception("Model [{$userClass}] does not have a [notify()] method.");
                 }
  
-                $notification = new ResetPasswordNotification($token);  
-                // $user->notify($notification);
+                
+                // $user->ResetPasswordNotification($token);
+
+                $notification = new ResetPasswordNotification($token); 
+                $user->getEmailForPasswordReset($notification);
             },
         );
  
