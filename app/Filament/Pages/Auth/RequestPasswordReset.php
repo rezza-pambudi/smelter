@@ -47,7 +47,7 @@ class RequestPasswordReset extends BaseRequestPasswordReset
                 // $user->ResetPasswordNotification($token);
 
                 $notification = new ResetPasswordNotification($token); 
-                $user->getEmailForPasswordReset($notification);
+                $user->notify($notification);
             },
         );
  
