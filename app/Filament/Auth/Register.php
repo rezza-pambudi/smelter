@@ -17,7 +17,7 @@ class Register extends AuthRegister
             $this->getPasswordFormComponent(),
             $this->getPasswordConfirmationFormComponent(),
 
-            TextInput::make('contact')->required(),
+            TextInput::make('contact')->required()->placeholder('Nomor whatsapp yang bisa dihubungi'),
             // Select::make('roles')->multiple()->default('Member')
             // TextInput::make('roles.name')->required()->default('Member')->hidden()
         ])
