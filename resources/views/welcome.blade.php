@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{url('/images/logo/favicon.png')}}" type="image/x-icon">
-  <link rel="stylesheet" href="{{url('/css/build/assets/app-DOHPjJOm.css')}}">
+  <link rel="stylesheet" href="{{url('/css/build/assets/app-Cc7WLWlV.css')}}">
   <link rel="stylesheet" href="{{url('/css/build/assets/theme-DtZyoH6u.css')}}">
   <link rel="stylesheet" href="{{url('/css/build/assets/style-CbMhjkwq.css')}}">
   <link rel="stylesheet" href="{{url('/css/build/assets/loopple-B_KN2k8g.css')}}">
