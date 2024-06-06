@@ -12,7 +12,7 @@
 
         <div class="flex flex-col items-center">
             <a href="/admin/login">
-                <button class="flex items-center w-[220px] py-4 text-lg font-bold text-center justify-center px-7 bg-[#ffffff] text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white focus:ring-4 focus:ring-purple-blue-100 border border-[#5555a5] hover:border-none transition duration-300 rounded-xl">Buat Request</button>
+                <button class="flex items-center w-[220px] py-4 text-lg font-bold text-center justify-center px-7 bg-purple-blue-300 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white focus:ring-4 focus:ring-purple-blue-100 transition duration-300 rounded-xl">Buat Request</button>
             </a>
         </div>
 
