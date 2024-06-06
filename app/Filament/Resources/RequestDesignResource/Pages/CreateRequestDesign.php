@@ -3,18 +3,20 @@
 namespace App\Filament\Resources\RequestDesignResource\Pages;
 
 use App\Models\User;
+use App\Models\Result;
 use Filament\Pages\Actions;
 use Filament\Actions\Action;
 use App\Models\RequestDesign;
-use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Notifications\Notification;
+use Illuminate\Notifications\Notifiable;
 use App\Filament\Resources\ResultResource;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Console\View\Components\Alert;
 use App\Filament\Resources\RequestDesignResource;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Messages\MailMessage;
+use App\Notifications\CreateNotification;
 
 
 // use App\Models\Result;
@@ -44,7 +46,8 @@ class CreateRequestDesign extends CreateRecord
         return $this->previousUrl ?? $this->getResource()::getUrl('index');
     }
 
-    protected function afterCreate(): void{
+    protected function afterCreate(): void
+    {
 
         $result = $this->record;
 
@@ -54,7 +57,10 @@ class CreateRequestDesign extends CreateRecord
             ->body("From: {$result->result?->email}<br>Brand: {$result->result?->brand}")
             ->persistent()
             ->sendToDatabase(User::whereNot('id', auth()->user()->id)->get());
-            
+
+        $user=Auth::user();
+        $message='record created';
+        $user->notify(new CreateNotification($message));
     }
 
     protected function getCreatedNotification(): ?Notification
@@ -66,7 +72,7 @@ class CreateRequestDesign extends CreateRecord
     }
 
     use Notifiable;
- 
+
     /**
      * Route notifications for the mail channel.
      *
@@ -76,7 +82,7 @@ class CreateRequestDesign extends CreateRecord
     {
         // Return email address only...
         return $this->email;
- 
+
         // Return email address and name...
         return [$this->email => $this->name];
     }
