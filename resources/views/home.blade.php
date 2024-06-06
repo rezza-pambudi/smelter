@@ -17,7 +17,7 @@
         </div>
 
         <p class="mb-6 text-base font-normal leading-7 lg:w-2/3 text-black mx-auto my-6">
-            Butuh bantuan? <a href="mailto:smelter@detiknetwork-salesproduct.com?cc=erick@detik.com, rezza@detik.com&subject=Butuh%20bantuan%20terhadap%20CMS%20Design%20Smelter&body=Dear%20Team%20Designer%2C%0A%0ASaya%20butuh%20bantuan%20untuk.."><span class="font-semibold text-grey-900">Hubungi kami</span></a>
+            Butuh bantuan? <a href="mailto:smelter@detiknetwork-salesproduct.com?cc=erick@detik.com, rezza@detik.com&subject=Butuh%20bantuan%20terhadap%20CMS%20Design%20Smelter&body=Dear%20Team%20Designer%2C%0A%0ASaya%20butuh%20bantuan%20untuk.."><span class="font-semibold text-grey-900 hover:text-[#1f2758]">Hubungi kami</span></a>
         </p>
 
     </div>
