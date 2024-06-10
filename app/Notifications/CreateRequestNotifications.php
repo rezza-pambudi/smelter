@@ -46,12 +46,14 @@ class CreateRequestNotifications extends Notification
         $name = 'CMS Design Smelter';
 
         return (new MailMessage)
+                    ->template('emails.template.IncomingRequest')
                     ->from($address, $name)
                     ->cc($ccaddress, $name)
                     //->bcc($address, $name)
                     ->replyTo($address, $name)
                     ->subject($subject)
                     //->with([ 'test_message' => $this->data['message'] ])
+                    ->greeting('Hello Detikers!')
                     ->line('Testing')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
