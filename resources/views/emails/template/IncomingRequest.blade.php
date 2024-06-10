@@ -1,5 +1,5 @@
 <x-mail::message>
-#Hi {{$user->name}}!
+#Hi {{$users->name}}!
 
 Visit your settings page by clicking on the following button
 
