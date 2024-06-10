@@ -3,12 +3,13 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Mail\Mailable;
 
 class CreateRequestNotifications extends Notification
 {
@@ -44,6 +45,7 @@ class CreateRequestNotifications extends Notification
         $bccaddress = '';
         $subject = 'Testing Announcement Incoming Request';
         $name = 'CMS Design Smelter';
+        $user=Auth::user();
 
         return (new MailMessage)
                     ->template('emails.template.IncomingRequest')
