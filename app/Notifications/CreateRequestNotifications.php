@@ -11,6 +11,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use App\Filament\Resources\RequestDesignResource\Pages\CreateRequestDesign;
 
 class CreateRequestNotifications extends Notification
 {
@@ -42,13 +43,14 @@ class CreateRequestNotifications extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         $address = 'smelter@detiknetwork-salesproduct.com';
-        $ccaddress = 'designer@detik.com';
+        $ccaddress = 'rezza@detik.com';
         $bccaddress = '';
         $subject = 'Testing Announcement Incoming Request';
         $name = 'CMS Design Smelter';
 
         $user = Auth::user()->name;
-        $senderemail = Result::pluck('email', 'id');
+        //$senderemail = record('email');
+        //$result = $this->fill();
 
         return (new MailMessage)
                     ->from($address, $name)
@@ -56,14 +58,13 @@ class CreateRequestNotifications extends Notification
                     //->bcc($address, $name)
                     ->replyTo($address, $name)
                     ->subject($subject)
-                    //->with([ 'test_message' => $this->data['message'] ])
                     ->greeting('Hello!')
                     ->line('Ada request dibuat oleh ' . $user)
                     ->line('dengan detail sebagai berikut, ')
-                    ->line("Pengirim: {$senderemail}")
+                    ->line("Pengirim: ")
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
-                    ;
+                    //->with([ 'test_message' => $this->data['message'] ]);       
     }
 
     /**

@@ -3,26 +3,13 @@
 namespace App\Filament\Resources\RequestDesignResource\Pages;
 
 use App\Models\User;
-use App\Models\Result;
-use App\Mail\TestEmail;
-use Filament\Pages\Actions;
-use Filament\Actions\Action;
-use App\Models\RequestDesign;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Database\Eloquent\Model;
 use Filament\Notifications\Notification;
 use Illuminate\Notifications\Notifiable;
-use App\Notifications\CreateNotification;
-use App\Filament\Resources\ResultResource;
 use Filament\Resources\Pages\CreateRecord;
-use Illuminate\Console\View\Components\Alert;
 use App\Filament\Resources\RequestDesignResource;
-use App\Mail\CreateRequest;
 use App\Notifications\CreateRequestNotifications;
-use Illuminate\Notifications\Messages\MailMessage;
-
-
 // use App\Models\Result;
 
 class CreateRequestDesign extends CreateRecord
@@ -66,6 +53,7 @@ class CreateRequestDesign extends CreateRecord
          $message='record created';
          $user->notify(new CreateRequestNotifications($message));
 
+         
         //$data = ['message' => 'This is a test!'];
         //Mail::to('smelter@detiknetwork-salesproduct.com')->send(new CreateRequest($data));
     }
