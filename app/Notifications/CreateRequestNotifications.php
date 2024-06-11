@@ -48,7 +48,7 @@ class CreateRequestNotifications extends Notification
         $name = 'CMS Design Smelter';
 
         $user = Auth::user()->name;
-        //$result = Result::class();
+        $senderemail = Result::pluck('email', 'id');
 
         return (new MailMessage)
                     ->from($address, $name)
@@ -60,7 +60,7 @@ class CreateRequestNotifications extends Notification
                     ->greeting('Hello!')
                     ->line('Ada request dibuat oleh ' . $user)
                     ->line('dengan detail sebagai berikut, ')
-                    ->line("Pengirim:  ")
+                    ->line("Pengirim: {$senderemail}")
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
                     ;
