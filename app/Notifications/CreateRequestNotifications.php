@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Result;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Auth;
@@ -45,18 +46,21 @@ class CreateRequestNotifications extends Notification
         $bccaddress = '';
         $subject = 'Testing Announcement Incoming Request';
         $name = 'CMS Design Smelter';
-        $user=Auth::user();
+
+        $user = Auth::user()->name;
+        //$result = Result::class();
 
         return (new MailMessage)
-                    ->template('emails.template.IncomingRequest')
                     ->from($address, $name)
                     ->cc($ccaddress, $name)
                     //->bcc($address, $name)
                     ->replyTo($address, $name)
                     ->subject($subject)
                     //->with([ 'test_message' => $this->data['message'] ])
-                    ->greeting('Hello Detikers!')
-                    ->line('Testing')
+                    ->greeting('Hello!')
+                    ->line('Ada request dibuat oleh ' . $user)
+                    ->line('dengan detail sebagai berikut, ')
+                    ->line("Pengirim:  ")
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
                     ;
