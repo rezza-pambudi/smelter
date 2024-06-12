@@ -53,6 +53,8 @@ class CreateRequestNotifications extends Notification
         $email = Result::all()->last()->email;
         $brand = Result::all()->last()->brand;
         $brief = Result::all()->last()->brief;
+        $form = Result::all()->last()->pilih_form;
+        $tipe = Result::all()->last()->tipe;
         //$senderemail = record('email');
         //$result = $this->fill();
 
@@ -63,10 +65,11 @@ class CreateRequestNotifications extends Notification
                     ->replyTo($address, $name)
                     ->subject($subject)
                     ->greeting('Hello!')
-                    ->line('Ada request dibuat oleh ' . $user)
-                    ->line('dengan detail sebagai berikut, ')
-                    ->line("Pengirim: {$email}")
+                    ->line("Ada request dibuat oleh {$user} dengan detail sebagai berikut,")
+                    ->line("Email: {$email}")
                     ->line("Brand: {$brand}")
+                    ->line("Form: {$form}")
+                    ->line("Tipe: {$tipe}")
                     ->line("{$brief}")
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
