@@ -40,15 +40,19 @@ class CreateRequestNotifications extends Notification
     /**
      * Get the mail representation of the notification.
      */
+
     public function toMail(object $notifiable): MailMessage
     {
         $address = 'smelter@detiknetwork-salesproduct.com';
-        $ccaddress = 'rezza@detik.com';
+        $ccaddress = 'arez.atlantiz@gmail.com';
         $bccaddress = '';
         $subject = 'Testing Announcement Incoming Request';
         $name = 'CMS Design Smelter';
 
         $user = Auth::user()->name;
+        $email = Result::all()->last()->email;
+        $brand = Result::all()->last()->brand;
+        $brief = Result::all()->last()->brief;
         //$senderemail = record('email');
         //$result = $this->fill();
 
@@ -61,7 +65,9 @@ class CreateRequestNotifications extends Notification
                     ->greeting('Hello!')
                     ->line('Ada request dibuat oleh ' . $user)
                     ->line('dengan detail sebagai berikut, ')
-                    ->line("Pengirim: ")
+                    ->line("Pengirim: {$email}")
+                    ->line("Brand: {$brand}")
+                    ->line("{$brief}")
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
                     //->with([ 'test_message' => $this->data['message'] ]);       
